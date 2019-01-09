@@ -2,6 +2,11 @@ import java.io.*;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+/**
+ *   This class is exclusive for the Big Screen Graph problem and contains the main method
+ *   It is based on the Graph class
+ **/
+
 public class BigScreenGraph {
 
     Graph graph;
@@ -10,7 +15,13 @@ public class BigScreenGraph {
         graph = new Graph();
     }
 
-
+    /**
+     *   Loads a given file into the graph member variable while avoiding duplicates
+     *   Every line in input file contains name of a movie followed by the cast separated by a '/'
+     *
+     *   @param filename A full path of the input filename
+     *   @see            Graph
+     **/
     public void readActMovFile(String filename) throws IOException {
         try{
             File inputFile = new File(filename);
@@ -22,8 +33,6 @@ public class BigScreenGraph {
             String line;
             while((line = br.readLine()) != null){
                 //process the line
-//                System.out.println(line);
-
                 String[] splits = line.split("/");
 
                 for(int i = 0; i< splits.length; i ++ ){
