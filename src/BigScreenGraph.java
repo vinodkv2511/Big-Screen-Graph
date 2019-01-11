@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 /**
  *   This class is exclusive for the Big Screen Graph problem and contains the main method
- *   It is based on the Graph class
+ *   This represents the relation between movies and actors in a graph and provides convinience
+ *   methods for performing some operations on the graph
+ *   It depends on the Graph class
+ *
+ *   @author Vinod Krishna Vellampalli
+ *   @date 08/01/2019
  **/
 
 public class BigScreenGraph {
@@ -58,7 +63,10 @@ public class BigScreenGraph {
 
     }
 
-
+    /**
+     *  This method takes string for actor name and prints all the movies he/she acted in
+     *  @param actor Name of the actor 
+     **/
     public void displayMoviesOfActor(String actor){
         Vertex thisVertex = this.graph.getVertex(actor);
         if(thisVertex != null){
@@ -76,6 +84,10 @@ public class BigScreenGraph {
         }
     }
 
+    /**
+     * This method takes a movie name as parameter and prints all the actors in that movie
+     * @param movie Name of the movie
+     **/
     public void displayActorsOfMovie(String movie){
         Vertex thisVertex = this.graph.getVertex(movie);
         if(thisVertex != null){
@@ -93,6 +105,10 @@ public class BigScreenGraph {
         }
     }
 
+    /**
+     * This method prints the number of movies and number of actors along with the full list
+     * @param shouldPrintFull Boolean value, if true prints the list of actors and movies
+     */
     public void displayActMov(Boolean shouldPrintFull){
         LinkedList<String> actorsL = new LinkedList<>();
         LinkedList<String> moviesL = new LinkedList<>();
@@ -114,11 +130,18 @@ public class BigScreenGraph {
 
     }
 
-
+    /**
+     * This method prints the number of movies and actors along with the full list 
+     */
     public void displayActMov(){
         displayActMov(true);
     }
 
+    /**
+     * This method takes two movie names and prints one of the common actors between these movies using BFS technique
+     * @param movA name of the first movie
+     * @param movB name of the second movie 
+     */
     public void findMovieRelation(String movA, String movB){
         Vertex movAVertex = this.graph.getVertex(movA);
         Vertex movBVertex = this.graph.getVertex(movB);
@@ -131,12 +154,15 @@ public class BigScreenGraph {
         else{
             System.out.println("Movie name not found! Please check and try again.");
         }
-
+        //Creating new instance of BFS with first movie as starting point
         BFS bfs = new BFS(this.graph, movA);
 
+        //In Big Screen Graph, If the shortest distance between two movies is 2 implies that 
+        //they are directly connected by a actor in between them
         if(bfs.distanceTo(movB) == 2 ){
             ArrayStack<String> stack = bfs.pathTo(movB);
             stack.pop();
+            //second or middle element in the stack will be the connecting actor
             System.out.println(movA+" and "+movB+" are related by R with "+stack.pop()+" as a common actor");
         }
         else{
@@ -144,10 +170,16 @@ public class BigScreenGraph {
         }
     }
 
+    /**
+     * This method takes two movie names and prints one of the common actors if they are directly connected
+     * or if they are connected by a movie with relation T then it prints the common movie
+     * @param movA name of the first movie
+     * @param movB name of the second movie 
+     */
     public void findMovieTransRelation(String movA, String movB){
         Vertex movAVertex = this.graph.getVertex(movA);
         Vertex movBVertex = this.graph.getVertex(movB);
-
+        //Some input validation
         if(movAVertex != null && movBVertex != null){
             if (movAVertex.type != Vertex.VertexType.MOVIE || movBVertex.type != Vertex.VertexType.MOVIE){
                 System.out.println("You have to provide two movies. Please retry");
@@ -156,7 +188,8 @@ public class BigScreenGraph {
         else{
             System.out.println("Movie name not found! Please check and try again.");
         }
-
+        
+        //new instance of BFS with first movie as start
         BFS bfs = new BFS(this.graph, movA);
 
         if(bfs.distanceTo(movB) == 2 ){
@@ -164,11 +197,15 @@ public class BigScreenGraph {
             stack.pop();
             System.out.println(movA+" and "+movB+" are related by T with "+stack.pop()+" as a common actor");
         }
+        //This condition is to satisfy relaltion T's second condition
         else if(bfs.distanceTo(movB) == 4){
             ArrayStack<String> stack = bfs.pathTo(movB);
             stack.pop();
             stack.pop();
             System.out.println(movA+" and "+movB+" are related by T with "+stack.pop()+" as a common movie");
+        }
+        else{
+            System.out.println(movA+" and "+movB+" are not related by T");
         }
     }
 
@@ -177,7 +214,6 @@ public class BigScreenGraph {
 //        bsg.readActMovFile("/home/vinod/IdeaProjects/BigScreenGraph/test.txt");
 //        bsg.readActMovFile("/home/vinod/IdeaProjects/BigScreenGraph/cast.06.txt");
 //        bsg.readActMovFile("/home/vinod/IdeaProjects/BigScreenGraph/cast.all.txt");
-
 
         Scanner sc = new Scanner(System.in);
         boolean fileReadSuccess = false;
@@ -226,12 +262,14 @@ public class BigScreenGraph {
                     "    \n" +
                     "    Enter 0 to quit.");
 
-            int choice;
+            int choice = -1;
             try{
                 choice = sc.nextInt();
+                sc.nextLine();
             }
             catch (Exception ex){
-                choice = 10;
+                choice = -1;
+                sc.nextLine();
             }
 
             switch(choice){
@@ -243,19 +281,19 @@ public class BigScreenGraph {
                     break;
                 case 3:
                     System.out.println("\nPlease enter name of the actor (as in the input file)");
-                    sc.nextLine();
+                    // sc.nextLine();
                     String actor = sc.nextLine();
                     bsg.displayMoviesOfActor(actor);
                     break;
                 case 4:
                     System.out.println("\nPlease enter name of the movie (as in the input file)");
-                    sc.nextLine();
+                    // sc.nextLine();
                     String movie = sc.nextLine();
                     bsg.displayActorsOfMovie(movie);
                     break;
                 case 5:
                     System.out.println("\nPlease enter name of the first movie (as in the input file)");
-                    sc.nextLine();
+                    // sc.nextLine();
                     String firstMovieR = sc.nextLine();
                     System.out.println("\nPlease enter name of the second movie (as in the input file)");
                     String secondMovieR = sc.nextLine();
@@ -265,7 +303,7 @@ public class BigScreenGraph {
                     break;
                 case 6:
                     System.out.println("\nPlease enter name of the first movie (as in the input file)");
-                    sc.nextLine();
+                    // sc.nextLine();
                     String firstMovieT = sc.nextLine();
                     System.out.println("\nPlease enter name of the second movie (as in the input file)");
                     String secondMovieT = sc.nextLine();
@@ -276,7 +314,7 @@ public class BigScreenGraph {
                     System.out.println("Please provide a input file name (full path)");
 
                     do{
-                        sc.nextLine();
+                        // sc.nextLine();
                         String inputFile = sc.nextLine();
 
                         if("abort".equals(inputFile) || "\"abort\"".equals(inputFile)){
@@ -294,15 +332,13 @@ public class BigScreenGraph {
                         catch (Exception ex){
                             System.out.println("\nPlease try again with a valid file name or Enter \"abort\" to quit! \n");
                         }
-
-
                     }while (!fileReadSuccess);
                     break;
                 case 8:
                     System.out.println("Please provide a input file name (full path)");
 
                     do{
-                        sc.nextLine();
+                        // sc.nextLine();
                         String inputFile = sc.nextLine();
 
                         if("abort".equals(inputFile) || "\"abort\"".equals(inputFile)){
@@ -331,13 +367,9 @@ public class BigScreenGraph {
                     break;
                 default:
                     System.out.println("You have entered an invalid option. Please try again.");
+                    break;
             }
         }
-
-
-
-
-
     }
 
 }
