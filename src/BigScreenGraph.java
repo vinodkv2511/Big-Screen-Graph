@@ -149,10 +149,12 @@ public class BigScreenGraph {
         if(movAVertex != null && movBVertex != null){
             if (movAVertex.type != Vertex.VertexType.MOVIE || movBVertex.type != Vertex.VertexType.MOVIE){
                 System.out.println("You have to provide two movies. Please retry");
+                return;
             }
         }
         else{
             System.out.println("Movie name not found! Please check and try again.");
+            return;
         }
         //Creating new instance of BFS with first movie as starting point
         BFS bfs = new BFS(this.graph, movA);
@@ -183,10 +185,12 @@ public class BigScreenGraph {
         if(movAVertex != null && movBVertex != null){
             if (movAVertex.type != Vertex.VertexType.MOVIE || movBVertex.type != Vertex.VertexType.MOVIE){
                 System.out.println("You have to provide two movies. Please retry");
+                return;
             }
         }
         else{
             System.out.println("Movie name not found! Please check and try again.");
+            return;
         }
         
         //new instance of BFS with first movie as start
@@ -281,19 +285,16 @@ public class BigScreenGraph {
                     break;
                 case 3:
                     System.out.println("\nPlease enter name of the actor (as in the input file)");
-                    // sc.nextLine();
                     String actor = sc.nextLine();
                     bsg.displayMoviesOfActor(actor);
                     break;
                 case 4:
                     System.out.println("\nPlease enter name of the movie (as in the input file)");
-                    // sc.nextLine();
                     String movie = sc.nextLine();
                     bsg.displayActorsOfMovie(movie);
                     break;
                 case 5:
                     System.out.println("\nPlease enter name of the first movie (as in the input file)");
-                    // sc.nextLine();
                     String firstMovieR = sc.nextLine();
                     System.out.println("\nPlease enter name of the second movie (as in the input file)");
                     String secondMovieR = sc.nextLine();
@@ -303,7 +304,6 @@ public class BigScreenGraph {
                     break;
                 case 6:
                     System.out.println("\nPlease enter name of the first movie (as in the input file)");
-                    // sc.nextLine();
                     String firstMovieT = sc.nextLine();
                     System.out.println("\nPlease enter name of the second movie (as in the input file)");
                     String secondMovieT = sc.nextLine();
@@ -314,7 +314,6 @@ public class BigScreenGraph {
                     System.out.println("Please provide a input file name (full path)");
 
                     do{
-                        // sc.nextLine();
                         String inputFile = sc.nextLine();
 
                         if("abort".equals(inputFile) || "\"abort\"".equals(inputFile)){
