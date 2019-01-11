@@ -370,6 +370,7 @@ public class BigScreenGraph {
                     break;
             }
         }
+        sc.close();
     }
 
 }
