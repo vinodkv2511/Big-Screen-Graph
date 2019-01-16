@@ -1,0 +1,372 @@
+vinod@vinod-vaio:~/Documents/Big-Screen-Graph$ cd src/
+vinod@vinod-vaio:~/Documents/Big-Screen-Graph/src$ ls
+ArrayStack.java  BigScreenGraph.java  LinkedListNode.java  Stack.java               StackUnderflowError.java
+BFS.java         Graph.java           Queue.java           StackOverflowError.java  Vertex.java
+vinod@vinod-vaio:~/Documents/Big-Screen-Graph/src$ javac -d ../Build/ BigScreenGraph.java 
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+vinod@vinod-vaio:~/Documents/Big-Screen-Graph/src$ cd ..
+vinod@vinod-vaio:~/Documents/Big-Screen-Graph$ ls
+BigScreenGraph.iml  Build  cast.06.txt  cast.all.txt  src  test.txt
+vinod@vinod-vaio:~/Documents/Big-Screen-Graph$ cd Build/
+vinod@vinod-vaio:~/Documents/Big-Screen-Graph/Build$ ls
+ ArrayStack.class   BigScreenGraph.class   LinkedListNode.class   Stack.class                StackUnderflowError.class  'Vertex$VertexType.class'
+ BFS.class          Graph.class            Queue.class            StackOverflowError.class   Vertex.class
+vinod@vinod-vaio:~/Documents/Big-Screen-Graph/Build$ java BigScreenGraph 
+Welcome to Big Screen Graph!
+
+Please provide a input file name (full path)
+../test.tx 
+Reading file . . .
+
+Error reading file
+java.io.FileNotFoundException: ../test.tx (No such file or directory)
+
+Please try again with a valid file name or Enter "abort" to quit! 
+
+../test.txt
+Reading file . . .
+
+Big Screen Graph is ready!
+
+Please choose an option to proceed!
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+1
+
+Number of Movies : 6
+Number of Actors : 10
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+2
+
+Number of Movies : 6
+Number of Actors : 10
+List of movies 
+['Zindagi Na Milegi Dobara', 'Munna Bhai MBBS', 'Sanju', 'Dangal', 'PK', 'Dummy']
+List of actors 
+['Katrina Kaif', 'Ranbir Kapoor', 'Aamir Khan', 'fatima Sana', 'Kohli', 'Dia Mirza', 'Sanjay Dutt', 'Anushka Sharma', 'Arshad Warshi', 'Farhan Akthar']
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+3
+
+Please enter name of the actor (as in the input file)
+Aamir Khan
+
+Aamir Khan acted in the following movies
+Dangal
+PK
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+4
+
+Please enter name of the movie (as in the input file)
+PK
+
+Actors in the movie PK are:
+Aamir Khan
+Anushka Sharma
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+5
+
+Please enter name of the first movie (as in the input file)
+PK
+
+Please enter name of the second movie (as in the input file)
+Dangal
+PK and Dangal are related by R with Aamir Khan as a common actor
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+5
+
+Please enter name of the first movie (as in the input file)
+PK
+
+Please enter name of the second movie (as in the input file)
+Sanju
+PK and Sanju are not related by R
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+6
+
+Please enter name of the first movie (as in the input file)
+Dummy
+
+Please enter name of the second movie (as in the input file)
+Dangal
+Dummy and Dangal are related by T with PK as a common movie
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+6   
+
+Please enter name of the first movie (as in the input file)
+PK 
+
+Please enter name of the second movie (as in the input file)
+Dummy
+PK and Dummy are related by T with Anushka Sharma as a common actor
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+6       
+
+Please enter name of the first movie (as in the input file)
+Dummy
+
+Please enter name of the second movie (as in the input file)
+Sanju
+Dummy and Sanju are not related by T
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+7
+Please provide a input file name (full path)
+../case.06.txt
+Reading file . . .
+
+Error reading file
+java.io.FileNotFoundException: ../case.06.txt (No such file or directory)
+
+Please try again with a valid file name or Enter "abort" to quit! 
+
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+7
+Please provide a input file name (full path)
+../cast.06.txt 
+Reading file . . .
+
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+1
+
+Number of Movies : 8785
+Number of Actors : 84246
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+8
+Please provide a input file name (full path)
+../cast.06.txt
+Reading file . . .
+
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+1
+
+Number of Movies : 8779
+Number of Actors : 84236
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+22
+You have entered an invalid option. Please try again.
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+test wrong input
+You have entered an invalid option. Please try again.
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+3
+
+Please enter name of the actor (as in the input file)
+Dangal
+Actor not found! Please check spelling and retry.
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+4
+
+Please enter name of the movie (as in the input file)
+Aamir Khan
+Movie not found! Please check spelling and retry.
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+5
+
+Please enter name of the first movie (as in the input file)
+Aamir Khan
+
+Please enter name of the second movie (as in the input file)
+Anushka Sharma
+Movie name not found! Please check and try again.
+
+    Enter 1 to see the number of unique movies and actors
+    Enter 2 to see the number of unique movies and actors along with the full list
+    Enter 3 to see all the movies of an actor
+    Enter 4 to see all the actors of a movie
+    Enter 5 to find if two movies are related by relation R (as defined in problem statement)
+    Enter 6 to find if two movies are related by relation T (as defined in problem statement)
+    Enter 7 to load another input file onto existing graph
+    Enter 8 to load another input file as a new graph
+    
+    Enter 0 to quit.
+0
+Thanks for playing around. Hope you had a great time!

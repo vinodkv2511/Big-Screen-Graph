@@ -1,0 +1,58 @@
+======================================================================================
+
+Analysis for Question number 1
+
+Since we need to get the number of movies and Actors seperately, 
+we have to loop through the adjecency list.
+So this operation will take O(n) time.
+
+======================================================================================
+
+Analysis for Question number 2
+
+To list the names of movies in which an actor has acted, 
+	1. We need the find the vertex of that actor
+	2. We need to loop through linked list of all the movies he acted in
+
+Step 1 takes a constant time which is O(1) as we have used a HashMap
+Step 2 takes a time of O(n-1) time in the worst case 
+
+So the worst case running time will be in the O(n), but in most real world cases it will be 
+O(1) for sufficiently large n, because the size of neibours list is very small when compared to n 
+and can be neglected. Also in our case, we have a condition that it can have a maximum of two movies, 
+so it will be O(1)
+
+
+======================================================================================
+
+Analysis for Question number 3
+
+To list the names of performers in a movie X, 
+	1. We need the find the vertex of that movie
+	2. We need to loop through linked list of all the performers in it
+
+Step 1 takes a constant time which is O(1) as we have used a HashMap
+Step 2 takes a time of O(n-1) time in the worst case. 
+
+So the worst case running time will be in the O(n), but in most real world cases it will be 
+O(1) for sufficiently large n, because the size of neibours list is very small when compared to n 
+and can be neglected. Also in our case, we have a condition that it can have a maximum of two movies, 
+so it will be O(1)
+
+======================================================================================
+
+Analysis for Question number 4
+
+Here we are performing a BFS which takes O(V+E), once we have BFS ready, 
+it takes a constant time, i.e O(1), to verify on it. 
+So the running time of this operation is O(n)
+
+======================================================================================
+
+Analysis for Question number 5
+
+Here we are performing a BFS which takes O(V+E), once we have BFS ready, 
+it takes a constant time, i.e O(1), to verify on it. 
+So the running time of this operation is O(n)
+
+======================================================================================
